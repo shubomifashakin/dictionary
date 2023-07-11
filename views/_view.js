@@ -2,7 +2,6 @@ import { findWord } from "../helpers/helperFunctions.js";
 
 const formError = document.querySelector(".form-error");
 const searchBar = document.querySelector(".search-bar");
-const searchBtn = document.querySelector(".search-btn");
 const searchForm = document.querySelector("form");
 
 //display element
@@ -25,8 +24,8 @@ searchForm.addEventListener("submit", function (e) {
     findWord(word)
       .then((data) => {
         formError.textContent = "";
-        console.log(data);
-        //change the text content of the words
+        // console.log(data);
+        //show the content change the text content of the words
         contentContainer.classList.add("content-active");
         wordEl.textContent = data.word;
         wordTranscription.textContent = data.phonetic;
@@ -37,8 +36,10 @@ searchForm.addEventListener("submit", function (e) {
         //clear the meanings container
         wordDetailsContainer.innerHTML = "";
 
+        //render the meanings
         data.meanings.forEach((meaning) => {
           const html = `
+          <!--- display the part of speech-->
       <div class="word-meaning">
         <p class="word-part-of-speech">${meaning.partOfSpeech}</p>
 
@@ -46,25 +47,25 @@ searchForm.addEventListener("submit", function (e) {
 
         ${meaning.definitions
           .map((def, i) => {
+            //for each definition found create this div element with the definition
             return ` <div class="word-definition">
           <p class="definition">
           <span class="definition-no">${i + 1}.</span>
           ${def.definition}
         </p>
-
+      
         ${
+          //if there is an example render the example
           def?.example
             ? ` <p class="word-example-sentence sub-text">
         example sentence - <span class="sentence-text">${def.example}</span>
       </p>`
             : ""
         }
-        
-      
+
         </div>`;
           })
           .join("")}
-
 
        ${
          meaning?.antonyms.length > 0
@@ -88,7 +89,6 @@ searchForm.addEventListener("submit", function (e) {
       })
       .catch((err) => {
         formError.textContent = err;
-        console.log(err);
       });
   }
 });
