@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <script
+      src="https://kit.fontawesome.com/a76d23d87b.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="module" src="./main.js"></script>
+
+    <title>Dictionary App</title>
+  </head>
+  <body>
+    <div id="app">
+      <main class="container">
+        <form autocomplete="off">
+          <p class="form-error"></p>
+          <div class="form-control">
+            <input
+              type="text"
+              placeholder="What word are you searching for today?"
+              class="search-bar"
+            />
+            <button type="submit" class="search-btn">Find</button>
+          </div>
+        </form>
+
+        <div class="content">
+          <section class="word-desc">
+            <h2 class="word">Hello</h2>
+
+            <p class="word-transcription">sss</p>
+            <i class="fa-solid fa-file-audio audio-icon"
+              ><audio
+                no-controls
+                src="/media/cc0-audio/t-rex-roar.mp3"
+                class="audio-el"
+              ></audio
+            ></i>
+            <!--word desc-->
+          </section>
+
+          <section class="word-details">
+            <!--word details-->
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
