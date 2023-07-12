@@ -3,14 +3,17 @@
 * {
   padding: 0;
   margin: 0;
+
+  font-family: "Roboto Mono", monospace;
+}
+
+:root {
   --primary-bg-color: #000;
   --primary-text-color: #fff;
   --search-btn-color: #fff;
   --hover-color: #f1b10e;
   --part-of-speech: #f1b10e;
-  font-family: "Roboto Mono", monospace;
 }
-
 html,
 body {
   height: 100%;
@@ -28,6 +31,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: linear 0.3s;
 
   .container {
     display: flex;
@@ -43,15 +47,42 @@ body {
       margin-bottom: 2rem;
       width: 100%;
       align-items: center;
+      box-sizing: border-box;
 
-      .form-error {
-        color: red;
-        font-size: 0.85rem;
-        margin-bottom: 0.5rem;
+      .form-others {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 0.75rem;
+
+        #mode-icon {
+          color: var(--primary-text-color);
+          transition: linear 0.3s;
+          font-size: 1rem;
+          flex-basis: 20%;
+          text-align: center;
+          order: 2;
+          cursor: pointer;
+          box-sizing: border-box;
+
+          &:hover {
+            color: darken($color: #fff, $amount: 40);
+          }
+        }
+
+        .form-error {
+          color: red;
+          font-size: 0.85rem;
+          flex-basis: 80%;
+          text-align: left;
+          order: 1;
+        }
       }
+
       .form-control {
         display: flex;
         width: 100%;
+        margin-bottom: 0.5rem;
         .search-bar {
           color: var(--primary-text-color);
           flex-basis: 80%;
@@ -131,17 +162,21 @@ body {
         .word {
           font-size: 2.5rem;
           margin-right: 0.5rem;
-          color: #fce51d;
+          color: lighten($color: #f1b10e, $amount: 5);
         }
 
         .word-transcription {
           font-size: 0.85rem;
           margin-right: 0.5rem;
+          color: var(--primary-text-color);
+          transition: linear 0.3s;
         }
 
         .audio-icon {
           font-size: 0.85rem;
           cursor: pointer;
+          color: var(--primary-text-color);
+          transition: linear 0.3s;
         }
       }
 
@@ -154,6 +189,7 @@ body {
             font-weight: 400;
             margin-bottom: 0.5rem;
             color: var(--part-of-speech);
+            transition: linear 0.3s;
           }
 
           .word-definition {
@@ -161,12 +197,16 @@ body {
 
             .definition {
               margin-bottom: 0.5rem;
+              color: var(--primary-text-color);
+              transition: linear 0.3s;
             }
           }
 
           .sub-text {
             font-size: 0.85rem;
             margin-bottom: 0.25rem;
+            color: var(--primary-text-color);
+            transition: linear 0.3s;
           }
 
           .sentence-text,

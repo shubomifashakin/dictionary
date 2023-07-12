@@ -2,12 +2,15 @@
 * {
   padding: 0;
   margin: 0;
+  font-family: "Roboto Mono", monospace;
+}
+
+:root {
   --primary-bg-color: #000;
   --primary-text-color: #fff;
   --search-btn-color: #fff;
   --hover-color: #f1b10e;
   --part-of-speech: #f1b10e;
-  font-family: "Roboto Mono", monospace;
 }
 
 html,
@@ -27,6 +30,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: linear 0.3s;
 }
 #app .container {
   display: flex;
@@ -42,15 +46,38 @@ body {
   margin-bottom: 2rem;
   width: 100%;
   align-items: center;
+  box-sizing: border-box;
 }
-#app .container form .form-error {
+#app .container form .form-others {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0.75rem;
+}
+#app .container form .form-others #mode-icon {
+  color: var(--primary-text-color);
+  transition: linear 0.3s;
+  font-size: 1rem;
+  flex-basis: 20%;
+  text-align: center;
+  order: 2;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+#app .container form .form-others #mode-icon:hover {
+  color: #999999;
+}
+#app .container form .form-others .form-error {
   color: red;
   font-size: 0.85rem;
-  margin-bottom: 0.5rem;
+  flex-basis: 80%;
+  text-align: left;
+  order: 1;
 }
 #app .container form .form-control {
   display: flex;
   width: 100%;
+  margin-bottom: 0.5rem;
 }
 #app .container form .form-control .search-bar {
   color: var(--primary-text-color);
@@ -126,15 +153,19 @@ body {
 #app .container .content .word-desc .word {
   font-size: 2.5rem;
   margin-right: 0.5rem;
-  color: #fce51d;
+  color: #f2b926;
 }
 #app .container .content .word-desc .word-transcription {
   font-size: 0.85rem;
   margin-right: 0.5rem;
+  color: var(--primary-text-color);
+  transition: linear 0.3s;
 }
 #app .container .content .word-desc .audio-icon {
   font-size: 0.85rem;
   cursor: pointer;
+  color: var(--primary-text-color);
+  transition: linear 0.3s;
 }
 #app .container .content .word-details .word-meaning {
   margin-bottom: 1.5rem;
@@ -144,16 +175,21 @@ body {
   font-weight: 400;
   margin-bottom: 0.5rem;
   color: var(--part-of-speech);
+  transition: linear 0.3s;
 }
 #app .container .content .word-details .word-meaning .word-definition {
   margin-bottom: 1.5rem;
 }
 #app .container .content .word-details .word-meaning .word-definition .definition {
   margin-bottom: 0.5rem;
+  color: var(--primary-text-color);
+  transition: linear 0.3s;
 }
 #app .container .content .word-details .word-meaning .sub-text {
   font-size: 0.85rem;
   margin-bottom: 0.25rem;
+  color: var(--primary-text-color);
+  transition: linear 0.3s;
 }
 #app .container .content .word-details .word-meaning .sentence-text,
 #app .container .content .word-details .word-meaning .antonyms,

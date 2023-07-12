@@ -1,7 +1,9 @@
 import { findWord } from "../helpers/helperFunctions.js";
 
 class View {
+  app = document.querySelector("#app");
   formError = document.querySelector(".form-error");
+  formIcon = document.querySelector("#mode-icon");
   searchBar = document.querySelector(".search-bar");
   searchForm = document.querySelector("form");
 
@@ -22,6 +24,8 @@ class View {
 
     //when the user types anything in the search bar begin searching
     this.searchBar.addEventListener("keyup", this.searchBarCb.bind(this));
+
+    this.formIcon.addEventListener("click", this.changeMode.bind(this));
   }
 
   //play the audio
@@ -124,6 +128,31 @@ class View {
         //show the error on the input
         this.formError.textContent = err;
       });
+  }
+
+  changeMode(e) {
+    if (e.target.classList.contains("fa-moon")) {
+      e.target.classList.remove("fa-moon");
+      e.target.classList.add("fa-sun");
+    } else {
+      e.target.classList.remove("fa-sun");
+      e.target.classList.add("fa-moon");
+    }
+
+    if (this.app.classList.contains("dark")) {
+      //change the bg color to white
+      this.toggleColor("#F3F9E3", "#000", "light", "dark");
+    } else {
+      this.toggleColor("#000", "#fff", "dark", "light");
+    }
+  }
+
+  toggleColor(c1, c2, amode, rmode) {
+    this.app.classList.remove(rmode);
+    this.app.classList.add(amode);
+    document.documentElement.style.setProperty("--primary-bg-color", c1);
+    document.documentElement.style.setProperty("--primary-text-color", c2);
+    document.documentElement.style.setProperty("--search-btn-color", c2);
   }
 }
 
