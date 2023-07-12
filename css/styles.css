@@ -1,0 +1,253 @@
+@import url("https://fonts.cdnfonts.com/css/josefin-sans");
+* {
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  font-family: "Josefin Sans", sans-serif;
+  --dark-bg-color: #181824;
+  --dark-text-color: #fff;
+  --dark-header-text-color: #fff;
+  --dark-input-color: #25273c;
+  --light-bg-color: #fff;
+  --light-text-color: #535268;
+}
+
+.light-mode {
+  background-color: var(--light-bg-color) !important;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.app {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  background-color: var(--dark-bg-color);
+  transition: linear 0.3s;
+}
+.app .image-container {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.app .image-container .bg-image {
+  width: 100%;
+  transition: linear 0.3s;
+}
+.app .main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  height: 29rem;
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+}
+.app .main .header {
+  flex-basis: 10%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.app .main .header .header-text {
+  font-size: 2.25rem;
+  letter-spacing: 0.25rem;
+  flex-basis: 80%;
+  color: var(--dark-header-text-color);
+}
+.app .main .header .mode-icon {
+  flex-basis: 20%;
+  color: #fff;
+  text-align: right;
+  cursor: pointer;
+  transition: linear 0.3s;
+}
+.app .main .main-app {
+  display: flex;
+  flex-direction: column;
+}
+.app .main .main-app .create-inputs {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 3rem;
+  background-color: var(--dark-input-color);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin-bottom: 1em;
+}
+.app .main .main-app .create-inputs .tick-container {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: solid 2px #323449;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.app .main .main-app .create-inputs .todo-create {
+  width: 100%;
+  height: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--dark-header-text-color);
+  text-transform: capitalize;
+}
+.app .main .main-app .created-tasks {
+  width: 100%;
+  min-height: 3rem;
+  max-height: 18rem;
+  overflow-y: auto;
+  position: relative;
+}
+.app .main .main-app .created-tasks::-webkit-scrollbar {
+  width: 0.3rem;
+  background: var(--dark-input-color);
+}
+.app .main .main-app .created-tasks::-webkit-scrollbar-track {
+  width: 5px !important;
+}
+.app .main .main-app .created-tasks::-webkit-scrollbar-thumb {
+  background-color: var(--dark-text-color);
+  height: 1px;
+}
+.app .main .main-app .created-tasks .tasks {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 3rem;
+  background-color: var(--dark-input-color);
+  padding: 0.5rem 1rem;
+  box-sizing: border-box;
+  border-bottom: solid 2px #323449;
+  margin-bottom: 0;
+  border-radius: 0;
+  cursor: pointer;
+  transition: linear 0.3s;
+}
+.app .main .main-app .created-tasks .tasks .tick-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: solid 2px #323449;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.app .main .main-app .created-tasks .tasks .tick-container .tick-icon {
+  display: none;
+  color: #fff;
+  font-size: 0.55rem;
+}
+.app .main .main-app .created-tasks .tasks .todo-input {
+  flex-basis: 90%;
+  height: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--dark-header-text-color);
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: linear 0.3s;
+}
+.app .main .main-app .created-tasks .tasks .todo-input::-moz-placeholder {
+  font-size: 14px;
+}
+.app .main .main-app .created-tasks .tasks .todo-input::placeholder {
+  font-size: 14px;
+}
+.app .main .main-app .created-tasks .tasks .close-icon-container {
+  flex-basis: 5%;
+  height: 100%;
+  font-size: 1rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.app .main .main-app .created-tasks .tasks .close-icon-container .close-icon {
+  transition: linear 0.3s;
+}
+.app .main .main-app .created-tasks .tasks .close-icon-container .close-icon:hover {
+  color: #555669;
+}
+.app .main .main-app .app-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  width: 100%;
+  height: 3rem;
+  font-weight: 600;
+  color: #555672;
+  background-color: var(--dark-input-color);
+}
+.app .main .main-app .app-footer .items-left {
+  flex-basis: 20%;
+  font-size: 0.75rem;
+  text-align: center;
+}
+.app .main .main-app .app-footer .items-left .items-no {
+  font-size: 0.75rem;
+}
+.app .main .main-app .app-footer .tasks-selection {
+  display: flex;
+  flex-basis: 40%;
+  justify-content: space-around;
+}
+.app .main .main-app .app-footer .tasks-selection p {
+  font-size: 0.75rem;
+}
+.app .main .main-app .app-footer .clear-completed {
+  flex-basis: 30%;
+  font-size: 0.75rem;
+}
+.app .main .main-app .app-footer .hover-footer {
+  cursor: pointer;
+  font-weight: 700;
+  transition: linear 0.3s;
+}
+.app .main .main-app .app-footer .hover-footer:hover {
+  color: #3762bd;
+}
+
+.footer-action-active {
+  color: #3762bd !important;
+}
+
+.ticked {
+  display: block !important;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: rgb(153, 152, 152) !important;
+}
+
+.hide-task {
+  display: none !important;
+}
+
+/*mobile styles potrait*/
+@media (min-width: 0px) and (max-width: 767px) {
+  .app .image-container {
+    display: none;
+  }
+  .app .main {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 0.5rem;
+  }
+}/*# sourceMappingURL=styles.css.map */

@@ -105,7 +105,7 @@ body {
       overflow-x: hidden;
       overflow-y: auto;
       box-sizing: border-box;
-      scrollbar-color: var(--part-of-speech) var(--part-of-speech);
+      scrollbar-color: var(--part-of-speech) #000;
       scrollbar-width: thin;
 
       &::-webkit-scrollbar {
@@ -204,6 +204,10 @@ body {
       display: flex;
       justify-content: center;
       width: 100%;
+
+      form {
+        margin-bottom: 1rem;
+      }
 
       .search-btn {
         padding: 0 0.5rem !important;

@@ -1,5 +1,6 @@
 export async function findWord(word) {
   try {
+    //if the fetch takes too long the search times out
     const response = await Promise.race([
       fetch(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`),
       timeOut(),
