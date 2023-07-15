@@ -31,6 +31,8 @@ body {
   align-items: center;
   justify-content: center;
   transition: linear 0.3s;
+  -moz-transition: linear 0.3s;
+  -webkit-transition: linear 0.3s;
 }
 #app .container {
   display: flex;
@@ -63,6 +65,8 @@ body {
   order: 2;
   cursor: pointer;
   box-sizing: border-box;
+  -moz-transition: linear 0.3s;
+  -webkit-transition: linear 0.3s;
 }
 #app .container form .form-others #mode-icon:hover {
   color: #999999;
@@ -89,17 +93,22 @@ body {
   background: none;
   margin-right: 1rem;
   transition: linear 0.3s;
+  -moz-transition: linear 0.3s;
+  -webkit-transition: linear 0.3s;
 }
 #app .container form .form-control .search-bar:hover {
   border-color: var(--hover-color);
   color: var(--hover-color);
 }
 #app .container form .form-control .search-bar::-moz-placeholder {
-  -moz-transition: linear 0.3s;
   transition: linear 0.3s;
+  -moz-transition: linear 0.3s;
+  -webkit-transition: linear 0.3s;
 }
 #app .container form .form-control .search-bar::placeholder {
   transition: linear 0.3s;
+  -moz-transition: linear 0.3s;
+  -webkit-transition: linear 0.3s;
 }
 #app .container form .form-control .search-bar:hover::-moz-placeholder {
   color: var(--part-of-speech);
@@ -118,6 +127,8 @@ body {
   font-weight: 800;
   cursor: pointer;
   transition: linear 0.3s;
+  -moz-transition: linear 0.3s;
+  -webkit-transition: linear 0.3s;
 }
 #app .container form .form-control .search-btn:hover {
   color: var(--hover-color);
@@ -150,22 +161,27 @@ body {
   align-items: center;
   margin-bottom: 1rem;
 }
+#app .container .content .word-desc .desc-item:has(~ .desc-item) {
+  margin-right: 0.5rem;
+}
 #app .container .content .word-desc .word {
   font-size: 2.5rem;
-  margin-right: 0.5rem;
   color: #f2b926;
 }
 #app .container .content .word-desc .word-transcription {
   font-size: 0.85rem;
-  margin-right: 0.5rem;
   color: var(--primary-text-color);
   transition: linear 0.3s;
+  -moz-transition: linear 0.3s;
+  -webkit-transition: linear 0.3s;
 }
 #app .container .content .word-desc .audio-icon {
   font-size: 0.85rem;
   cursor: pointer;
   color: var(--primary-text-color);
   transition: linear 0.3s;
+  -moz-transition: linear 0.3s;
+  -webkit-transition: linear 0.3s;
 }
 #app .container .content .word-details .word-meaning {
   margin-bottom: 1.5rem;
@@ -176,6 +192,8 @@ body {
   margin-bottom: 0.5rem;
   color: var(--part-of-speech);
   transition: linear 0.3s;
+  -moz-transition: linear 0.3s;
+  -webkit-transition: linear 0.3s;
 }
 #app .container .content .word-details .word-meaning .word-definition {
   margin-bottom: 1.5rem;
@@ -184,12 +202,16 @@ body {
   margin-bottom: 0.5rem;
   color: var(--primary-text-color);
   transition: linear 0.3s;
+  -moz-transition: linear 0.3s;
+  -webkit-transition: linear 0.3s;
 }
 #app .container .content .word-details .word-meaning .sub-text {
   font-size: 0.85rem;
   margin-bottom: 0.25rem;
   color: var(--primary-text-color);
   transition: linear 0.3s;
+  -moz-transition: linear 0.3s;
+  -webkit-transition: linear 0.3s;
 }
 #app .container .content .word-details .word-meaning .sentence-text,
 #app .container .content .word-details .word-meaning .antonyms,
@@ -225,5 +247,14 @@ body {
   }
   #app .container .search-btn {
     padding: 0 0.5rem !important;
+  }
+  #app .container .word {
+    max-width: 10rem;
+    word-wrap: break-word;
+    margin-right: 0;
+    font-size: 1.5rem !important;
+  }
+  #app .container .desc-item:has(~ .desc-item) {
+    margin-right: 0.25rem !important;
   }
 }/*# sourceMappingURL=style.css.map */

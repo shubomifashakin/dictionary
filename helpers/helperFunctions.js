@@ -11,6 +11,9 @@ export async function findWord(word) {
       throw new Error("word not found");
     }
 
+    //insert the word in the url
+    history.pushState({}, "", `#${word}`);
+
     //extract the data
     const data = await response.json();
 
