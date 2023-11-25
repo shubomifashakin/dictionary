@@ -12,7 +12,13 @@ export async function findWord(word) {
     }
 
     //insert the word in the url
-    history.pushState({}, "", `#${word}`);
+
+    //get the url
+    let currentUrl = new URL(window.location.href);
+    // Add a word to the search parameter
+    currentUrl.searchParams.set("word", word);
+    // Replace the current URL with the modified one
+    window.history.replaceState({}, "", currentUrl.href);
 
     //extract the data
     const data = await response.json();

@@ -24,12 +24,16 @@ class Form {
 
   //when the site loads, it checks if there is a word after the hash, if there is, it searches for the word, if there isnt it does nothing
   onLoadSearch() {
+    let currentUrl = new URL(window.location.href);
+    const searchParams = currentUrl.searchParams.get("word");
     //if there is no word after the hash, dont do anything
-    if (!window.location.hash.slice(1).length) return;
+    //insert the word in the url
+    if (!searchParams) return;
 
     //if there is a word after the hash, search for the word
-    if (window.location.hash.slice(1).length >= 1) {
-      this.handleSearch(window.location.hash.slice(1));
+    if (searchParams) {
+      this.searchBar.value = searchParams;
+      this.handleSearch(searchParams);
     }
   }
 
